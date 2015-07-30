@@ -1,11 +1,11 @@
-# turf-square-grid
+# turf-rectangle-grid
 
-[![build status](https://secure.travis-ci.org/Turfjs/turf-square-grid.png)](http://travis-ci.org/Turfjs/turf-square-grid)
-
-
+[![build status](https://secure.travis-ci.org/Turfjs/turf-rectangle-grid.png)](http://travis-ci.org/Turfjs/turf-rectangle-grid)
 
 
-### `turf.square-grid(extent, cellWidth, units)`
+
+
+### `turf.rectangle-grid(extent, cellWidth, units)`
 
 Takes a bounding box and a cell depth and returns a FeatureCollection of Polygon features in a grid.
 
@@ -26,9 +26,9 @@ var extent = [-77.3876953125,38.71980474264239,-76.9482421875,39.027718840211605
 var cellWidth = 10;
 var units = 'miles';
 
-var squareGrid = turf.squareGrid(extent, cellWidth, units);
+var rectangleGrid = turf.rectangleGrid(extent, cellWidth, units);
 
-//=squareGrid
+//=rectangleGrid
 ```
 
 ## Installation
@@ -36,7 +36,7 @@ var squareGrid = turf.squareGrid(extent, cellWidth, units);
 Requires [nodejs](http://nodejs.org/).
 
 ```sh
-$ npm install turf-square-grid
+$ npm install turf-rectangle-grid
 ```
 
 ## Tests

@@ -1,3 +1,10 @@
+/*
+The MIT License (MIT)
+Copyright (c) 2015 turf
+
+This is an almost identical fork of https://github.com/Turfjs/turf-square-grid
+*/
+
 var point = require('turf-point');
 var polygon = require('turf-polygon');
 var distance = require('turf-distance');
