@@ -29,17 +29,19 @@ var distance = require('turf-distance');
  */
 module.exports = function (bbox, cell, units) {
   var fc = { type: 'FeatureCollection', features: [] }
-  var xFraction = units ? cell[0] / (distance(point([bbox[0], bbox[1]]), point([bbox[2], bbox[1]]), units))
-    : 1 / cell[0]
+  var xFraction = units ? (cell[0] / (distance(point([bbox[0], bbox[1]]), point([bbox[2], bbox[1]]), units)))
+    : (1 / cell[0])
   var cellWidth = xFraction * (bbox[2] - bbox[0]);
-  var yFraction = units ? cell[1] / (distance(point([bbox[0], bbox[1]]), point([bbox[0], bbox[3]]), units))
-    : 1 / cell[1]
+  var yFraction = units ? (cell[1] / (distance(point([bbox[0], bbox[1]]), point([bbox[0], bbox[3]]), units)))
+    : (1 / cell[1])
   var cellHeight = yFraction * (bbox[3] - bbox[1]);
 
   var currentX = bbox[0];
   while (currentX <= bbox[2]) {
+    if (!units && currentX === bbox[2]) break;
     var currentY = bbox[1];
     while (currentY <= bbox[3]) {
+      if (!units && currentY === bbox[3]) break;
       var cellPoly = polygon([[
           [currentX, currentY],
           [currentX, currentY+cellHeight],
