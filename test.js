@@ -2,7 +2,7 @@ var test = require('tape');
 var grid = require('./');
 var fs = require('fs');
 
-test('square-grid', function (t) {
+test('rectangle-grid', function (t) {
   var bbox1 = [
         -96.6357421875,
         31.12819929911196,
@@ -28,10 +28,10 @@ test('square-grid', function (t) {
     47.754097979680026
   ];
 
-  var grid1 = grid(bbox1, 20, 'miles');
-  var grid2 = grid(bbox2, 5, 'miles');
-  var grid3 = grid(bbox3, 2, 'miles');
-  var grid4 = grid(bbox4, 50, 'miles');
+  var grid1 = grid(bbox1, [20, 10], 'miles');
+  var grid2 = grid(bbox2, [5, 5], 'miles');
+  var grid3 = grid(bbox3, [2, 2], 'miles');
+  var grid4 = grid(bbox4, [50, 40], 'miles');
 
   t.ok(grid1.features.length);
   t.ok(grid2.features.length);
